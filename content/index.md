@@ -1,5 +1,6 @@
 Title: Open-Source Design Docs
 Date: 2022-05-01 15:08
+Modified: 
 
 Design docs for for various open-source projects, available for edit (PR) and review (make a bug report or use the in-repo review system).
 
@@ -19,4 +20,4 @@ Stuff I'm working on for /vg/station
 
 ### VGWS
 
-[TODO](vgws/TODO.md) list for /vg/station's website, which is an ancient mess.
+* [TODO](vgws/TODO.md) list for /vg/station's website, which is an ancient mess.

@@ -1,0 +1,6 @@
+.venv/
+.pre-commit-config.yaml
+.selid-hooks/
+output/
+.check-identity
+*.py[cio]
