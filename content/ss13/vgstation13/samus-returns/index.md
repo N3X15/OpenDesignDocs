@@ -4,7 +4,7 @@ This is a project for /vg/station to return Metroids, which were removed during 
 
 **This document is open to pull requests and issue reports.**
 
-[[__TOC__]]
+[[_TOC_]]
 
 # Legal Information
 
