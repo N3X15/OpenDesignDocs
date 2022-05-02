@@ -4,7 +4,9 @@ This is a project for /vg/station to return Metroids, which were removed during 
 
 **This document is open to pull requests and issue reports.**
 
-# Legal Implications
+[[__TOC__]]
+
+# Legal Information
 
 Metroid-related materials are legally linked to Nintendo in a large number of ways, so we **MUST** find another name and likeness.  **Metroids** are a **working title** while we try to find alternatives.
 
@@ -45,4 +47,117 @@ Feel free to make suggestions
 
 # What are Metroids?
 
-Words
+Metroids are a small, flying carbon mob that hungers for flesh.  Metroid cores are used by Xenobiologists to make materials, chemicals, weapons and foods that can be immensely helpful or detrimental to the station at large.
+
+They come in a variety of colors and shapes that signal genetic changes that can yield useful materials and information. Much of a Xenobio's time is spent carefully selectively breeding them to get the bloodlines they're interested in.
+
+# Justification
+*AKA: Why are Metroids a Thing Again?*
+
+Pomf asked for them.
+
+# Differences from Slimes
+
+* Slimes are ground animals and can (theoretically) be blocked by various kinds of furniture and barriers.
+* Metroids are flying mobs.
+* Metroids are faster than slimes.
+* Metroids are more aggressive than slimes.
+* Metroids can produce more than one core per metroid, depending on bloodline and age.
+* Metroids can take on some characteristics of their food (new).
+
+# Gameplay Loop
+
+Metroids can be encountered in laboratory vaults on the asteroid.
+
+Once captured, they can be brought back to the station and farmed in a similar manner to slimes:
+* Throw food animals into pen with Metroid.
+* Metroid turns into adult, becomes faster
+* Metroid splits/lays eggs after enough nutriment
+* Metroid spawn have a chance of mutating into one of a few possible bloodlines from consuming that animal
+* Xenobio uses extinguisher or temp gun to stun/kill metroids in the pen so they can retrieve desired animals
+* Xenobio establishes new breeding pen
+* Excess metroids are bonesawn to retrieve their cores.
+* Cores can be liquified (grinder), eaten directly, cooked, or reacted with reagents to retrieve goodies.
+
+# AI Loop
+
+AI loop is similar to the slimes (since slimes were a direct derivative of them), but needs redone due to age.
+
+* ECS-driven?
+
+## Initial State
+* Look for carbon mobs in vision
+    * Move towards
+    * If on same turf, attach and begin feeding
+* Otherwise, move in random direction
+* Tick down nutriment.
+
+## Feeding
+* Continue feeding unless removed
+* Each tick produces X genetic damage and Y brute to victim and Z nutriment to the metroid.
+* If removed, move back to initial state.
+* If child and nutriment over threshold, release and begin evolution timer.
+* If adult and released (by victim death or forcibly removed), release and begin spawning eggs.
+
+## Evolution
+
+* After X+rand() ticks, turn into adult and reset nutriment.
+* Do not find or attack targets.
+* Move slowly.
+
+## Spawning
+* Do not find or attack targets.
+* Move slowly.
+* Every X ticks, drop an egg and decrement X nutriment.
+* At 0 nutriment, die.
+
+# Cores
+
+A Metroid's body contains 1 core during the juvenile stage and 3 cores during the adult stage.
+
+## Core Removal
+
+* Use bone saw on metroid corpse.
+* Surgery failure destroys a core.
+
+# Mutations
+
+Metroids are capable of genetic mutations heralded by changes in the metroid's appearance, generally color and shape.
+
+## Mechanics
+
+* Metroids steal various kinds of behaviours from their prey.
+* Metroids can mutate to adapt to adverse conditions.
+
+## Bananium
+
+Results from armored metroid exposure to bananium floor tiles.
+
+Metroid is clown themed, with face paint, a party hat, and a bike horn. Instead of screeching, it honks. Has a small chance of slipping someone it's attached to.
+
+### Core Behaviour
+* **Used:** Bike horn noise.
+* **Thrown:** 
+  * Impacts turf: Fart noise, turns into a pool of space lube.
+  * Impacts mob: Cream pie reaction, confetti
+* **Ground:** Pick of:
+    * Clown Mask
+    * 3 Bananas
+    * Bike Horn
+    * 3 bananium sheets.  Yes, this lets you make lots of bananium.
+
+## Phazon
+
+Phazon-exposed metroid eggs turn into Phazon Metroids.
+
+* Metroid has a different sprite to look like a Phazon Metroid from the games.
+* Can stun and drag people around
+* Infants can teleport to seen tiles
+    * Will teleport away from projectiles
+* Inflicts significantly more damage
+* Instead of splitting, turns into a Hatcher, which is like a very dangerous jellyfish on crack.
+### Core Behaviour
+* **Used:** Nothing
+* **Thrown:** 
+  * Explodes, gives tox damage
+* **Ground:** Gives Phazon Sheet.
