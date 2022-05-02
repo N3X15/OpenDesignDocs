@@ -6,6 +6,15 @@ This is a project for /vg/station to return Metroids, which were removed during 
 
 [[_TOC_]]
 
+# Mirrors
+
+This page is mirrored at:
+
+* [GitLab](https://gitlab.com/N3X15/open-design-docs/-/blob/main/content/ss13/vgstation13/samus-returns/index.md) (Best Rendering)
+* [GitHub](https://github.com/N3X15/OpenDesignDocs/blob/main/content/ss13/vgstation13/samus-returns/index.md)
+
+PRs, reviews, and issues are welcome from any mirror.
+
 # Legal Information
 
 Metroid-related materials are legally linked to Nintendo in a large number of ways, so we **MUST** find another name and likeness.  **Metroids** are a **working title** while we try to find alternatives.
